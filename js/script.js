@@ -14,7 +14,7 @@ var ref = firebase.database().ref(); // ref is the root
 var spots = [];
 
 // add all the spots to the list
-ref.limitToLast(5).on("value", function (snapshot) {
+ref.on("value", function (snapshot) {
     let spot;
     var btn;
     spots = [];
