@@ -1,8 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Firebase Basic Chat Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>ReFresh Car Parking Algorithm</title>
 
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <!-- JS -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
 
@@ -12,27 +28,54 @@
     <!-- Custom JS -->
     <script src="js/script.js"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    
-    <!-- p5.js -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
-    
-    <script src="js/sketch.js"></script>
 
 </head>
 
 <body>
+    <!--    <div id="spotDiv"></div>-->
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br>
+            <br>
+            <h1 class="header center blue-text">ReFresh Car Parking Algorithm</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">An automatic, web-based parking spot organizer</h5>
+            </div>
+            <div class="row center">
+                <script src="js/sketch.js"></script>
+            </div>
 
-    <div id="spotDiv"></div>
-    <rect width="300" height="100"/>
+            <div id="bt">
+
+            </div>
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+    <body>
+        <script type="text/javascript">
+            document.addEventListener('click', function(e) {
+                if (document.activeElement.toString() == '[object HTMLButtonElement]') {
+                    document.activeElement.blur();
+                }
+            });
+        </script>
+        <div class="buttonContainer">
+            <button id="getspot" onclick="getSpot()">Get a Spot!</button>
+        </div>
+    </body>
+
+
+    <footer class="page-footer blue">
+        <p class="center">
+            Made by quasar. &copy; Arden Chen and Shrey Sahgal
+        </p>
+    </footer>
+
+
+
 </body>
 
 </html>

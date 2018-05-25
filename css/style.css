@@ -1,7 +1,56 @@
-.true {
-    color: blue;
+/* Custom Stylesheet */
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+    padding: 0 15px;
 }
 
-.false {
-    color: red;
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 1em;
+    /* Height of footer */
+    min-height: 100%;
+}
+
+header {
+    background-color: #cff;
+}
+
+#getspot {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    top: 175px;
+    left: 47%;
+}
+
+.buttonContainer {}
+
+:focus {
+    outline: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    background-color: #000;
 }
