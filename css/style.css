@@ -11,9 +11,9 @@ h1 {
     position: relative;
     top: -80px;
 }
-h5 {
+#topthing {
     position: relative;
-    top: -80px;
+    top: -120px;
 }
 .icon-block {
     padding: 0 15px;
@@ -25,8 +25,6 @@ h5 {
 
 html,
 body {
-    margin: 0;
-    height: 100%;
 }
 
 .wrapper {
@@ -45,15 +43,12 @@ header {
     text-align: center;
     z-index: 1;
     position: relative;
-    top: 55px;
-    left: 47%;
+    top: 50%;
 }
 
 .buttonContainer {
-    position: relative;
-    top: 55px;
-    left: 47%;
-    width: 100px;
+/*    position: relative;*/
+    text-align: center;
 }
 
 :focus {
@@ -66,4 +61,9 @@ footer {
     width: 100%;
     color: #fff;
     background-color: #000;
+}
+
+#info {
+    text-align: center;
+    padding-top: 3%;
 }

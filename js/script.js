@@ -92,17 +92,20 @@ function removeSpot() {
 }
 
 function getOrRemoveSpot() {
-    b = document.getElementById("getspot")
+    b = document.getElementById("getspot");
+    i = document.getElementById("info");
     console.log(b.offsetWidth);
     if (b.value == "nospot") {
         b.value = "spot"; // change val of btn
         getSpot(); // get the spot
         b.innerHTML = "Get rid of your spot." // change what btn says
+        i.innerHTML = "You have claimed Spot " + USERSPOT + "!";
 
     } else if (b.value == "spot") {
         b.value = "nospot"; // change val of btn
         removeSpot(); // remove the spot
         b.innerHTML = "Get a spot!"; // change what btn says
+        i.innerHTML = "You currently do not have a claimed spot.";
     }
 }
 
@@ -124,4 +127,10 @@ function setUntaken(i) { // green
         taken: false
     });
     transfer(18);
+}
+
+function randomTaken(i) { // FOR DEBUGGING
+    for (let p = 0; p < i; p++) {
+        setTaken(Math.floor(Math.random()*19));
+    }
 }

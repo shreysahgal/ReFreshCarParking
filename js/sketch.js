@@ -8,7 +8,7 @@ function setup() {
     cnv.style('z-index', '-1');
     var cxp = window.innerWidth / 2 - width / 2;
     var cyp = window.innerHeight / 2 - height / 2 + height / 3;
-    cnv.position(cxp, cyp - 70);
+    cnv.position(cxp, cyp-140);
     // test locs
     //    for (var i = 0; i < 19; i++) {
     //        locs.push(new spot(i));
