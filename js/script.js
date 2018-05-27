@@ -55,7 +55,7 @@ function update(index, newVal, name) {
 
 window.onload = function () { // move getspot button where we want it
     x = document.getElementById("getspot");
-    x.style.left = window.innerWidth / 2 - x.offsetWidth / 2;
+    x.style.left = window.innerWidth / 2;
 }
 
 var donzo = false;
@@ -98,11 +98,13 @@ function getOrRemoveSpot() {
         b.value = "spot"; // change val of btn
         getSpot(); // get the spot
         b.innerHTML = "Get rid of your spot." // change what btn says
+        b.style.left = window.innerWidth / 2;
 
     } else if (b.value == "spot") {
         b.value = "nospot"; // change val of btn
         removeSpot(); // remove the spot
         b.innerHTML = "Get a spot!"; // change what btn says
+        b.style.left = window.innerWidth / 2;
     }
 }
 

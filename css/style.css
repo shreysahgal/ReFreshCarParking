@@ -1,5 +1,6 @@
 /* Custom Stylesheet */
 
+
 /**
  * Use this file to override Materialize files so you can update
  * the core Materialize files in the future
@@ -11,10 +12,12 @@ h1 {
     position: relative;
     top: -80px;
 }
+
 h5 {
     position: relative;
     top: -80px;
 }
+
 .icon-block {
     padding: 0 15px;
 }
@@ -41,19 +44,15 @@ header {
     background-color: #cff;
 }
 
+.buttonContainer {
+    text-align: center;
+}
+
 #getspot {
     text-align: center;
     z-index: 1;
     position: relative;
-    top: 55px;
-    left: 47%;
-}
-
-.buttonContainer {
-    position: relative;
-    top: 55px;
-    left: 47%;
-    width: 100px;
+    top: 50%;
 }
 
 :focus {
