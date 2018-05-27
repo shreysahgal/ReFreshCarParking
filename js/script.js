@@ -55,7 +55,7 @@ function update(index, newVal, name) {
 
 window.onload = function () { // move getspot button where we want it
     x = document.getElementById("getspot");
-    x.style.left = window.innerWidth / 2 - x.offsetWidth/2;
+    x.style.left = window.innerWidth / 2 - x.offsetWidth / 2;
 }
 
 var donzo = false;
@@ -109,6 +109,12 @@ function getOrRemoveSpot() {
 function showUserSpot() {
     if (USERSPOT != null) {
         //        alert("your spot is spot num. " + USERSPOT);
+    }
+}
+
+function randomTaken(i) {
+    for (let p = 0; p < i; p++) {
+        setTaken(Math.floor(Math.random()*19));
     }
 }
 
