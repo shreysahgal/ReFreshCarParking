@@ -9,7 +9,7 @@
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
     <!-- JS -->
@@ -54,7 +54,6 @@
         </div>
     </div>
 
-    <body>
         <script type="text/javascript">
             document.addEventListener('click', function(e) {
                 if (document.activeElement.toString() == '[object HTMLButtonElement]') {
@@ -63,9 +62,17 @@
             });
         </script>
         <div class="buttonContainer">
-            <button id="getspot" onclick="getSpot()">Get a Spot!</button>
+            <button id="getspot" class="waves-effect waves-light btn blue nospot" onclick="getOrRemoveSpot()" value="nospot">Get a Spot!</button>
         </div>
-    </body>
+        
+        <!-- FOR DEBUGGING ONLY -- DELETE FOR LAUNCH -->
+        <button id="reset" onclick="setUntaken(0)">reset (DEBUGGING ONLY)</button>
+        <br>
+        <br>
+        <button id="take" onclick="setTaken(0)">take (DEBUGGING ONLY)</button>
+        <br>
+        <br>
+        <button id="take" onclick="for (var i = 0; i < 19; i++) {setUntaken(i)}">reset all (DEBUGGING ONLY)</button>
 
 
     <footer class="page-footer blue">

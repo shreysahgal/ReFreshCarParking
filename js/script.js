@@ -10,9 +10,10 @@ var config = {
 firebase.initializeApp(config);
 var ref = firebase.database().ref(); // ref is the root
 
-// list of all the spots (this will be used to display html and will be updated)
-var s = [];
-var spots = [];
+var s = []; // placeholder
+var spots = []; // list of taken vals of each spot (updated when db is changed)
+
+var USERSPOT = null; // spot the user is occupying, startes as null
 
 // add all the spots to the list
 ref.on("value", function (snapshot) {
@@ -22,14 +23,12 @@ ref.on("value", function (snapshot) {
     for (var i = 1; i < snapshot.numChildren() + 1; i++) {
         s.push(snapshot.child((i - 1).toString()).val());
     }
-    formatHTML(snapshot.numChildren());
+    transfer(snapshot.numChildren());
 });
 
-function formatHTML(lim) {
+function transfer(lim) {
     spots = s;
 }
-
-
 
 function doThing(val) {
     var b = document.getElementById("button" + val);
@@ -43,8 +42,7 @@ function doThing(val) {
         b.classList.add("true");
         newClass = "true";
     }
-//    console.log(b);
-
+    //    console.log(b); debugging
     update(val, newClass, b.id);
 }
 
@@ -53,31 +51,77 @@ function update(index, newVal, name) {
         name: "spot" + index,
         taken: newVal == "true"
     });
-//    console.log(ref.child(index));
 }
 
-window.onload = function () {
+window.onload = function () { // move getspot button where we want it
     x = document.getElementById("getspot");
-    x.style.left = window.innerWidth / 2 - 50;
+    x.style.left = window.innerWidth / 2 - x.offsetWidth/2;
 }
+
 var donzo = false;
+
 function getSpot() {
-    ref.on("value", function (snapshot) {
+    if (USERSPOT == null) {
+        var closest = null;
         var i = 0;
-        while(i < 19 && !donzo) {
-            console.log(i < 19 && !donzo);
-            if (!snapshot.child(i).val()['taken']) {
+        donzo = false;
+        while (i < 19 && !donzo) {
+            if (!spots[i]['taken']) {
+                closest = i;
                 donzo = true;
-                console.log("the i of the thing : " + i)
-                ref.child(i).update({
-                    taken: true
-                })
-                console.log("it should be done... now!");
             }
             i++;
         }
-        console.log("done");
+        donzo = false;
+
+        if (closest == null) {
+            alert("I'm sorry, but there are no available spots right now. Come back later and try again!");
+        } else {
+            USERSPOT = closest;
+            setTaken(closest);
+            showUserSpot();
+        }
+    }
+}
+
+function removeSpot() {
+    if (USERSPOT != null) {
+        setUntaken(USERSPOT);
+        USERSPOT = null;
+    }
+}
+
+function getOrRemoveSpot() {
+    b = document.getElementById("getspot")
+    console.log(b.offsetWidth);
+    if (b.value == "nospot") {
+        b.value = "spot"; // change val of btn
+        getSpot(); // get the spot
+        b.innerHTML = "Get rid of your spot." // change what btn says
+
+    } else if (b.value == "spot") {
+        b.value = "nospot"; // change val of btn
+        removeSpot(); // remove the spot
+        b.innerHTML = "Get a spot!"; // change what btn says
+    }
+}
+
+function showUserSpot() {
+    if (USERSPOT != null) {
+        //        alert("your spot is spot num. " + USERSPOT);
+    }
+}
+
+function setTaken(i) { // red
+    ref.child(i).update({
+        taken: true
     });
-    formatHTML(18);
-    donzo = false;
+    transfer(18);
+}
+
+function setUntaken(i) { // green
+    ref.child(i).update({
+        taken: false
+    });
+    transfer(18);
 }
