@@ -55,7 +55,11 @@
     </div>
 
     <script type="text/javascript">
+<<<<<<< HEAD
         document.addEventListener('click', function(e) {
+=======
+        document.addEventListener('click', function (e) {
+>>>>>>> 5fe15a8524f4603ca974435f05d9f5dcf4b52ac0
             if (document.activeElement.toString() == '[object HTMLButtonElement]') {
                 document.activeElement.blur();
             }
@@ -69,6 +73,7 @@
     <button id="reset" onclick="setUntaken(0)">reset (DEBUGGING ONLY)</button>
     <br>
     <br>
+<<<<<<< HEAD
     <button id="take" onclick="setTaken(0)">take (DEBUGGING ONLY)</button>
     <br>
     <br>
@@ -78,6 +83,15 @@
     <button id="whocares lmao" onclick="randomTaken(3)">take random 3</button>
 
     <h5 id="info" class="header col s12 light">You currently do not have a claimed spot.</h5>
+=======
+    <button id="take" onclick="setTaken(0)">take spot 1 (DEBUGGING ONLY)</button>
+    <br>
+    <br>
+    <button id="take" onclick="randomTaken(5)">take some random spots (DEBUGGING ONLY)</button>
+    <br>
+    <br>
+    <button id="take" onclick="for (var i = 0; i < 19; i++) {setUntaken(i)}">reset all (DEBUGGING ONLY)</button>
+>>>>>>> 5fe15a8524f4603ca974435f05d9f5dcf4b52ac0
 
 
     <footer class="page-footer blue">
