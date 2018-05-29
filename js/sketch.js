@@ -3,12 +3,14 @@ let nearest = 0;
 var btn;
 var cnv;
 
+var hasText = "You currently do not have a claimed spot.";
+
 function setup() {
     cnv = createCanvas(window.innerWidth / 3, window.innerHeight / 2);
     cnv.style('z-index', '-1');
     var cxp = window.innerWidth / 2 - width / 2;
     var cyp = window.innerHeight / 2 - height / 2 + height / 3;
-    cnv.position(cxp, cyp-140);
+    cnv.position(cxp, cyp - 140);
     // test locs
     //    for (var i = 0; i < 19; i++) {
     //        locs.push(new spot(i));
@@ -42,22 +44,23 @@ function draw() {
     strokeWeight(1);
     let boxWidth = width / 70 * 3;
     let boxHeight = height / 10;
-
+    textAlign(CENTER);
+    text(hasText, width / 2, 2 * height / 3);
     locs.forEach(function (spot, ind) {
 
         let rightPadding = width / 58; // account for enterance text
         ind++;
-        
+
         if (spot.taken) {
             fill('RED');
         } else {
             fill('GREEN');
         }
-        
+
         if (ind - 1 == USERSPOT) {
             fill('YELLOW');
         }
-        
+
 
         if (ind % 2 == 1) {
             rect(width - rightPadding - (boxWidth * (ind + 1)), -10, boxWidth, boxHeight);

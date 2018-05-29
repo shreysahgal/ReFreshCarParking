@@ -12,12 +12,7 @@ h1 {
     position: relative;
     top: -80px;
 }
-<<<<<<< HEAD
-#topthing {
-=======
-
 h5 {
->>>>>>> 5fe15a8524f4603ca974435f05d9f5dcf4b52ac0
     position: relative;
     top: -120px;
 }
@@ -48,7 +43,6 @@ header {
 
 .buttonContainer {
     text-align: center;
-<<<<<<< HEAD
     z-index: 1;
     position: relative;
     top: 50%;
@@ -57,7 +51,6 @@ header {
 .buttonContainer {
 /*    position: relative;*/
     text-align: center;
-=======
 }
 
 #getspot {
@@ -65,7 +58,6 @@ header {
     z-index: 1;
     position: relative;
     top: 50%;
->>>>>>> 5fe15a8524f4603ca974435f05d9f5dcf4b52ac0
 }
 
 :focus {
@@ -78,13 +70,9 @@ footer {
     width: 100%;
     color: #fff;
     background-color: #000;
-<<<<<<< HEAD
 }
 
 #info {
     text-align: center;
     padding-top: 3%;
 }
-=======
-}
->>>>>>> 5fe15a8524f4603ca974435f05d9f5dcf4b52ac0
