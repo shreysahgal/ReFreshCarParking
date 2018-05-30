@@ -98,7 +98,8 @@ function getOrRemoveSpot() {
         b.value = "spot"; // change val of btn
         getSpot(); // get the spot
         b.innerHTML = "Get rid of your spot." // change what btn says
-        hasText = "You have claimed Spot " + USERSPOT+1 + "!";
+        let shreyIsBadHopefullyHeWontSeeThisVariable = USERSPOT+1;
+        hasText = "You have claimed Spot " + shreyIsBadHopefullyHeWontSeeThisVariable + "!";
         b.style.left = window.innerWidth / 2;
 
     } else if (b.value == "spot") {
