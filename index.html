@@ -45,6 +45,10 @@
                 <script src="js/sketch.js"></script>
             </div>
 
+            <div class="buttonContainer" style="margin-top: 150px;">
+                <button id="getspot" class="waves-effect waves-light btn blue nospot" onclick="getOrRemoveSpot()" value="nospot">Get a Spot!</button>
+            </div>
+
             <div id="bt">
 
             </div>
@@ -55,15 +59,12 @@
     </div>
 
     <script type="text/javascript">
-        document.addEventListener('click', function (e) {
+        document.addEventListener('click', function(e) {
             if (document.activeElement.toString() == '[object HTMLButtonElement]') {
                 document.activeElement.blur();
             }
         });
     </script>
-    <div class="buttonContainer" style="margin: 0 auto; width: 144px;">
-        <button id="getspot" class="waves-effect waves-light btn blue nospot" onclick="getOrRemoveSpot()" value="nospot">Get a Spot!</button>
-    </div>
 
 
     <footer class="page-footer blue">
